@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 namespace App\Models;
@@ -51,57 +50,3 @@ class pelanggan_model extends Model
         }
     }
 }
-=======
-<?php
-
-namespace App\Models;
-
-use CodeIgniter\Model;
-
-class Barang_model extends Model
-{
-    protected $table = 'barang';
-    public function getBarang($id = false)
-    {
-        if ($id === false) {
-            return $this->findAll();
-        } else {
-            return $this->getWhere(['id_barang' => $id]);
-        }
-    }
-
-    // Function Save Barang
-    public function saveBarang($data)
-    {
-        $builder = $this->db->table($this->table);
-        return $builder->insert($data);
-    }
-
-    // Function Edit Barang
-    public function editBarang($data, $id)
-    {
-        $builder = $this->db->table($this->table);
-        $builder->where('id_barang', $id);
-        return $builder->update($data);
-    }
-    // Function Hapus Barang
-    public function hapusBarang($id)
-    {
-        $builder = $this->db->table($this->table);
-        return $builder->delete(['id_barang' => $id]);
-    }
-}
-
-class pelanggan_model extends Model
-{
-    protected $table = 'barang';
-    public function getBarang($id = false)
-    {
-        if ($id === false) {
-            return $this->findAll();
-        } else {
-            return $this->getWhere(['id_barang' => $id]);
-        }
-    }
-}
->>>>>>> 046b37e (initial commit)
